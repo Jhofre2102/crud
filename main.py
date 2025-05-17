@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, redirect , url_for
 app=Flask(__name__)
 
 usuario=[]
@@ -22,9 +22,22 @@ def crud():
 
     return render_template ("crud.html", usuario=usuario)
 
+@app.route("/update/<int:id>", methods=["GET", "POST"])
+def update(id):
+    #TODO capturar el usuario a editar
+    for diccionario in usuario:#para cada diccionario de la lista evalue
+        if diccionario['id']==id: #si el id convertido a string es igual al id que se pasa  por parametros
+            usuario_a_editar=diccionario #hemos identificado los datos del usuario a editar
+            break
+    #print(usuario_a_editar)
+    
+    #TODO actualizar la informacion del usuario seleccionado
+    if request.method=="POST":
+        usuario_a_editar["nombre"]=request.form.get("nombre")#el nombre nuevo seria el que llega por u nuevo formulario
+        usuario_a_editar["correo"]=request.form.get("correo")
+        return redirect(url_for("crud"))# redirecciona la aplicacion a la nota de la funcion crud
 
-
-
+    return render_template('editar.html',usuario_a_editar=usuario_a_editar)
 
 
 
