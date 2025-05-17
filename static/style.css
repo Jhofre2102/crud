@@ -1,59 +1,91 @@
+
+/* Estilos generales para el cuerpo del documento */
 body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: black;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
+    background-color: black;                /* Fondo negro del cuerpo */
+    display:flex;                             /* Utiliza flexbox para centrar el contenido */
+    justify-content: center;                  /* Centra horizontalmente */    
+    align-items: center;                      /* Centra verticalmente */
+    margin: 0;                                /* Elimina márgenes por defecto */
+    min-height: 100vh;                        /* Altura mínima de toda la ventana */
 }
+
+
+/* Estilo del contenedor del formulario */
 
 .contenedor{
-    background-color:goldenrod;
-    border-radius: 20px;
-    max-width: 600px;
-    box-shadow: 0px 0px 50px red;
-    padding: 20px;
-    width: 90%;
+    background-color:#1e1e2f;               /* Fondo oscuro suave*/
+    border-radius: 20px;                      /* Bordes redondeados del cuadro */
+    max-width: 600px;                         /* Ancho máximo del contenedor */
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.1);  /* Sombra suave alrededor */
+    padding: 25px;                            /* Espaciado interior */
+    width: 90%;                               /* El contenedor ocupa el 90% del ancho disponible */
+    color: white;                           /* Color de texto por defecto dentro del contenedor */
 }
 
+/* Estilo para el título del formulario */
 
 h1 {
-    color: rgb(244, 247, 247);
+    color: #f5f5f5;                         /* Color claro para el título */
+    text-align: center;                       /* Centrado del texto dentro del recuadro */
 }
 
+/* Estilo para los campos de entrada del formulario */
 form input {
-    width: 300px;
-    color:rgb(48, 3, 247);
-    border-radius: 20px;
-    background-color: rgb(251, 251, 249);
+     width: 100%;                           /* Ocupa el ancho completo del contenedor */
+    padding: 10px;                          /* Espaciado interior del campo */
+    margin-top: 10px;                       /* Separación superior */
+    margin-bottom: 15px;                    /* Separación inferior */
+    color: #222;                          /* Color del texto dentro del input */
+    border-radius: 10px;                    /* Bordes redondeados */
+    border: none;                           /* Elimina borde por defecto */
+    background-color: #f0f0f0;            /* Fondo gris claro del campo */
+    font-size: 14px;                        /* Tamaño del texto */
 }
+
+/* Estilo para el botón de guardar */
 
 button{
-    margin: 15px;
-    width: 200px;
-    color: rgb(249, 249, 253);
-    background-color: rgb(1, 14, 9);
-    border-radius: 20px;
+    width: 100%;                            /* Ocupa el ancho completo */
+    padding: 10px;                          /* Altura del botón */
+    margin-top: 15px;                       /* Separación superior */
+    background-color: #008cba;            /* Color azul del botón */
+    color: white;                         /* Texto blanco */
+    border: none;                           /* Sin bordes */
+    border-radius: 10px;                    /* Bordes redondeados */
+    font-size: 15px;                        /* Tamaño de fuente del botón */
+    cursor: pointer;                        /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color al pasar el mouse */
 }
 
+/* Estilo al pasar el mouse sobre el botón */
+
+button:hover {
+    background-color: #0072a3;            /* Color más oscuro al mover el mouse sobre el boton  */
+}
+
+/* Estilo de las tablas */
 
 table {
-    width: 100%;
-    border-collapse:collapse;
-    margin: 10px;
-    
-}
+    width: 100%;                            /* La tabla ocupa todo el ancho disponible */
+    border-collapse: collapse;              /* Elimina espacio entre celdas */
+    margin: 10px;                           /* Margen exterior */
+
 
 table, th, td {
-    border:5px solid rgb(250, 249, 245);
-    text-align:center;
+    border: 5px solid #faf9f5;            /* Borde blanco roto */
+    text-align: center;                     /* Texto centrado */
 }
+}
+/* Encabezado de la tabla */
 
 th {
-    color:rgb(37, 37, 56);
+    color: #e0e0f0;                        /* Color de texto claro */
+    background-color: #2c2c3c;             /* Fondo oscuro para destacar el encabezado */
 }
 
+/* Celdas del cuerpo de la tabla */
 td {
-    color:darkred;
+    color: darkred; /* Texto rojo oscuro */
+    background-color: #f9f9f9; /* Fondo claro */
 }
