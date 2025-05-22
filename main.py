@@ -24,6 +24,8 @@ def crud():
 
 @app.route("/update/<int:id>", methods=["GET", "POST"])
 def update(id):
+    usuario_a_editar=''
+    
     #TODO capturar el usuario a editar
     for diccionario in usuario:#para cada diccionario de la lista evalue
         if diccionario['id']==id: #si el id convertido a string es igual al id que se pasa  por parametros
@@ -36,6 +38,10 @@ def update(id):
         usuario_a_editar["nombre"]=request.form.get("nombre")#el nombre nuevo seria el que llega por u nuevo formulario
         usuario_a_editar["correo"]=request.form.get("correo")
         return redirect(url_for("crud"))# redirecciona la aplicacion a la nota de la funcion crud
+
+
+    if usuario_a_editar=='':
+        return f"El usuario con Id {id} no se encuentra" 
 
     return render_template('editar.html',usuario_a_editar=usuario_a_editar)
 
